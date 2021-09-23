@@ -76,10 +76,7 @@ function isBalanced(expression) {
         }
         else if(isCloser(character)) {
             if(closers.indexOf(character) === openers.indexOf(lastInStack())) {
-                console.log('Entre aca')
                 stack.pop();
-            } else {
-                return 'NO'
             }
         }
     })
