@@ -2,11 +2,10 @@ const convertToArray = number => {
     return number.toString().split('').filter(n => n !== '-');
 };
 
-const isEven = number => Number(number)%2 == 0;
-
 // if even===true checks if all numbers are even, else it checks if all are odd
 const isEvenOrOdd = (array, even) => { 
-    return !array.some(n => (even ? !isEven(n) : isEven(n)));
+    const helper = even ? 0 : 1;
+    return !array.some(n => n%2!==helper);
 };
 
 // First Part:
