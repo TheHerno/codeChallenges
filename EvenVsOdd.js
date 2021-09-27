@@ -1,13 +1,12 @@
 const convertToArray = number => {
-    return number
-        .toString()
-        .split('')
-        .filter(n => n !== '-');
+    return number.toString().split('').filter(n => n !== '-');
 };
+
+const isEven = number => Number(number)%2 == 0;
 
 // if even===true checks if all numbers are even, else it checks if all are odd
 const isEvenOrOdd = (array, even) => { 
-    return !array.some(n => (even ? Number(n) % 2 !== 0 : Number(n) % 2 === 0));
+    return !array.some(n => (even ? !isEven(n) : isEven(n)));
 };
 
 // First Part:
